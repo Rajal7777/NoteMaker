@@ -17,9 +17,9 @@ export default function SelectedProject({ project, onDelete, onDeleteTask, onAdd
                     onClick={onDelete}>Delete</button>
                 </div>
                 <p className="mb-4 text-stone-400">{formattedDate}</p>
-                <p className="text-stone-600 whitespace-pre-wrap ">{project.description}</p>
+                <p className="text-stone-600  whitespace-pre-wrap">{project.description}</p>
             </header>
-            <Tasks onAdd={onAddTask} onDeleteTask={onDeleteTask} tasks={tasks} onDelete={onDelete}/>
+            <Tasks onAdd={onAddTask} onDeleteTask={onDeleteTask} tasks={tasks} />
         </div>
     );
 }

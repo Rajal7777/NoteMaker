@@ -11,8 +11,9 @@ function App() {
     tasks: []
   });
 
-  console.log(projectsState.tasks)
-
+  console.log(projectsState.projects);
+  console.log("selected project id:", projectsState.selectedProjectId);
+  //function to add task
   function handleAddTask(text) {
      setProjectsState((prevState) => {
       const taskId = Math.random();
@@ -29,6 +30,7 @@ function App() {
      })
   }
 
+  //delete task function
   function handleDeleteTask(id) {
       setProjectsState((prevState) => {
       return {
@@ -62,7 +64,7 @@ function App() {
     });
   }
 
-  //show project in sidebar
+  //show selected project when clicked in sidebar
   function handleSelect(id) {
     setProjectsState((prevState) => {
       return {
@@ -72,6 +74,8 @@ function App() {
     });
   }
 
+
+  //handle add project function
   function handleAddProject(projectData) {
     setProjectsState((prevState) => {
       const newProject = {
@@ -87,7 +91,7 @@ function App() {
     });
   }
 
-  //delete fun
+  //delete project fun
   function handleDeleteProject() {
     setProjectsState((prevState) => {
       return {
@@ -101,7 +105,8 @@ function App() {
     });
   }
 
-  //find fun
+  //find project === id function
+  //get the slectedId from state and find the project that matches that id.Id is passed  by the handleSelect function
   const selectedProject = projectsState.projects.find(
     (project) => project.id === projectsState.selectedProjectId,
   );
